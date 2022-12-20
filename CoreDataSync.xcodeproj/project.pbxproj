@@ -393,14 +393,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CoreDataSync/App/CoreDataSync.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6B9Z9DVNKS;
+				DEVELOPMENT_TEAM = UQ5HPP32DR;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CoreDataSync/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = eman.eman.eman.eman22;
+				PRODUCT_BUNDLE_IDENTIFIER = SounApp.Team2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -414,14 +414,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CoreDataSync/App/CoreDataSync.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6B9Z9DVNKS;
+				DEVELOPMENT_TEAM = UQ5HPP32DR;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CoreDataSync/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = eman.eman.eman.eman22;
+				PRODUCT_BUNDLE_IDENTIFIER = SounApp.Team2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
