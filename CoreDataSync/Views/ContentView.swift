@@ -29,7 +29,7 @@ struct ContentView: View {
         
         NavigationView {
             ZStack{
-                Image("image1")
+                Image("background")
                     .renderingMode(.original)
                     .resizable()
                     .edgesIgnoringSafeArea(.all)

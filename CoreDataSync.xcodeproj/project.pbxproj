@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D9460072953183C001ED285 /* OnbordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9460062953183C001ED285 /* OnbordingView.swift */; };
+		5D94600929531863001ED285 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D94600829531863001ED285 /* SplashScreenView.swift */; };
+		5D94600B29531998001ED285 /* Catgpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D94600A29531998001ED285 /* Catgpage.swift */; };
+		5D94600F29532036001ED285 /* FolderPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D94600E29532036001ED285 /* FolderPageView.swift */; };
+		5D9460112953208A001ED285 /* lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9460102953208A001ED285 /* lists.swift */; };
+		5D9460172953274E001ED285 /* CoreDataSync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D9460152953274E001ED285 /* CoreDataSync.xcdatamodeld */; };
+		5D9460192953337C001ED285 /* FoldersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9460182953337C001ED285 /* FoldersView.swift */; };
 		F4AE96E625F2D2EE00019801 /* CoreDataSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE96E525F2D2EE00019801 /* CoreDataSyncApp.swift */; };
 		F4AE96E825F2D2EE00019801 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE96E725F2D2EE00019801 /* ContentView.swift */; };
 		F4AE96EA25F2D2EF00019801 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AE96E925F2D2EF00019801 /* Assets.xcassets */; };
 		F4AE96EF25F2D2EF00019801 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE96EE25F2D2EF00019801 /* PersistenceController.swift */; };
-		F4AE96F225F2D2EF00019801 /* CoreDataSync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4AE96F025F2D2EF00019801 /* CoreDataSync.xcdatamodeld */; };
 		F4AE96FD25F2D2EF00019801 /* CoreDataSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE96FC25F2D2EF00019801 /* CoreDataSyncTests.swift */; };
 		F4AE971825F2D58A00019801 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4AE971725F2D58A00019801 /* CloudKit.framework */; };
 		F4AE971F25F684B000019801 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE971E25F684B000019801 /* ImagePicker.swift */; };
@@ -30,12 +36,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D9460062953183C001ED285 /* OnbordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingView.swift; sourceTree = "<group>"; };
+		5D94600829531863001ED285 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		5D94600A29531998001ED285 /* Catgpage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catgpage.swift; sourceTree = "<group>"; };
+		5D94600E29532036001ED285 /* FolderPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderPageView.swift; sourceTree = "<group>"; };
+		5D9460102953208A001ED285 /* lists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lists.swift; sourceTree = "<group>"; };
+		5D9460162953274E001ED285 /* CoreDataSync.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataSync.xcdatamodel; sourceTree = "<group>"; };
+		5D9460182953337C001ED285 /* FoldersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersView.swift; sourceTree = "<group>"; };
 		F4AE96E225F2D2EE00019801 /* CoreDataSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AE96E525F2D2EE00019801 /* CoreDataSyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSyncApp.swift; sourceTree = "<group>"; };
 		F4AE96E725F2D2EE00019801 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F4AE96E925F2D2EF00019801 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4AE96EE25F2D2EF00019801 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		F4AE96F125F2D2EF00019801 /* CoreDataSync.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataSync.xcdatamodel; sourceTree = "<group>"; };
 		F4AE96F325F2D2EF00019801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4AE96F825F2D2EF00019801 /* CoreDataSyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataSyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AE96FC25F2D2EF00019801 /* CoreDataSyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSyncTests.swift; sourceTree = "<group>"; };
@@ -117,7 +129,13 @@
 			children = (
 				F4AE96E725F2D2EE00019801 /* ContentView.swift */,
 				F4AE972025F69E7F00019801 /* AddContactView.swift */,
+				5D94600A29531998001ED285 /* Catgpage.swift */,
 				F4AE971E25F684B000019801 /* ImagePicker.swift */,
+				5D9460062953183C001ED285 /* OnbordingView.swift */,
+				5D94600829531863001ED285 /* SplashScreenView.swift */,
+				5D94600E29532036001ED285 /* FolderPageView.swift */,
+				5D9460102953208A001ED285 /* lists.swift */,
+				5D9460182953337C001ED285 /* FoldersView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				F4AE96EE25F2D2EF00019801 /* PersistenceController.swift */,
-				F4AE96F025F2D2EF00019801 /* CoreDataSync.xcdatamodeld */,
+				5D9460152953274E001ED285 /* CoreDataSync.xcdatamodeld */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -242,12 +260,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4AE96EF25F2D2EF00019801 /* PersistenceController.swift in Sources */,
-				F4AE96F225F2D2EF00019801 /* CoreDataSync.xcdatamodeld in Sources */,
+				5D9460172953274E001ED285 /* CoreDataSync.xcdatamodeld in Sources */,
+				5D9460192953337C001ED285 /* FoldersView.swift in Sources */,
+				5D94600929531863001ED285 /* SplashScreenView.swift in Sources */,
 				F4AE971F25F684B000019801 /* ImagePicker.swift in Sources */,
 				F4C904F926138E7E00252717 /* Config.swift in Sources */,
+				5D9460112953208A001ED285 /* lists.swift in Sources */,
 				F4AE96E825F2D2EE00019801 /* ContentView.swift in Sources */,
+				5D94600F29532036001ED285 /* FolderPageView.swift in Sources */,
+				5D9460072953183C001ED285 /* OnbordingView.swift in Sources */,
 				F4AE972125F69E7F00019801 /* AddContactView.swift in Sources */,
 				F4AE96E625F2D2EE00019801 /* CoreDataSyncApp.swift in Sources */,
+				5D94600B29531998001ED285 /* Catgpage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,13 +527,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F4AE96F025F2D2EF00019801 /* CoreDataSync.xcdatamodeld */ = {
+		5D9460152953274E001ED285 /* CoreDataSync.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F4AE96F125F2D2EF00019801 /* CoreDataSync.xcdatamodel */,
+				5D9460162953274E001ED285 /* CoreDataSync.xcdatamodel */,
 			);
-			currentVersion = F4AE96F125F2D2EF00019801 /* CoreDataSync.xcdatamodel */;
-			path = CoreDataSync.xcdatamodeld;
+			currentVersion = 5D9460162953274E001ED285 /* CoreDataSync.xcdatamodel */;
+			name = CoreDataSync.xcdatamodeld;
+			path = ../../../CoreDataSync.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

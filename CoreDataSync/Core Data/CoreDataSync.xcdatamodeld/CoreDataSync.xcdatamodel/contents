@@ -5,7 +5,4 @@
         <attribute name="photo" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="UIKit.UIImage"/>
         <attribute name="time" optional="YES" attributeType="Date" defaultDateTimeInterval="693246540" usesScalarValueType="NO"/>
     </entity>
-    <entity name="Folder" representedClassName="Folder" syncable="YES" codeGenerationType="class">
-        <attribute name="folderName" optional="YES" attributeType="String"/>
-    </entity>
 </model>
