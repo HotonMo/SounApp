@@ -11,7 +11,7 @@ class CoreDataSyncTests: XCTestCase {
 
     func test_CloudKitReadiness() throws {
         // Fetch zones from the Private Database of the CKContainer for the current user to test for valid/ready state
-        let container = CKContainer(identifier: Config.containerIdentifier)
+        let container = CKContainer(identifier: "iCloud.SounApp.Team2")
         let database = container.privateCloudDatabase
 
         let fetchExpectation = expectation(description: "Expect CloudKit fetch to complete")
