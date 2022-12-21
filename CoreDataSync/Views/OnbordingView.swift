@@ -12,6 +12,7 @@ struct OnBoardingStep{
     let image: String
     let title: String
     let description: String
+    
 }
 
 private let onBoardingSteps = [
@@ -24,6 +25,7 @@ private let onBoardingSteps = [
 
 struct OnbordingView: View {
     @State private var currentStep = 0
+
     
     init() {
         UIScrollView.appearance().bounces = false
@@ -34,19 +36,7 @@ struct OnbordingView: View {
             VStack{
                 HStack{
                     Spacer()
-                    //     if   !(self.currentStep == onBoardingSteps.count - 1) {
-                    //                    Button(action: {
-                    //                        FolderPageView(
-                    //                            currentUser: userList[0]
-                    //                        )
-                    //                        self.currentStep = onBoardingSteps.count - 1
-                    //                    }){
-                    //
-                    //                        Text("Skip")
-                    //                            .padding(16)
-                    //                            .foregroundColor(Color("Color1"))
-                    //                        //   }
-                    //                    }
+              
                 }
                 TabView(selection: $currentStep){
                     ForEach (0..<onBoardingSteps.count, id: \.self) {it in
@@ -108,7 +98,7 @@ struct OnbordingView: View {
                 .buttonStyle(PlainButtonStyle())
             }
             .toolbar {
-          NavigationLink(destination:   FoldersView(), label:
+                NavigationLink(destination: FoldersView(ThefolderName: Binding<String>.constant("Casper")), label:
                             {
               Text("skip")
                   .foregroundColor(.blue)
@@ -120,8 +110,8 @@ struct OnbordingView: View {
                         ) }
                          }
                          }
-//FolderPageView(
-//  currentUser: userList[0])
+
+
 
 struct OnbordingView_Previews: PreviewProvider {
     static var previews: some View {

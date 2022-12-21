@@ -24,13 +24,14 @@ struct MenuModifier: ViewModifier {
 
 
 struct Catgpage: View {
-    @State var folderName = "Casper"
+    @State var ThefolderName = "User"
+    @Binding var CatgName :String
     @State var showDetails = false
     @State var isEditing = false
     @State private var Expand = true
     @State var Hospitals = "All Hospitals"
     let TheHospitals:[String] = ["Rabieh Medical Hospital", "Salman Habib Hospital", "King Faisal Specialist Hospital and Research Center", "King Abdulaziz City - National Guard Health Affairs", "Prince Sultan Medical City", "Saudi Center for Organ Transplantation", "Security forces Hospital", "Prince Salman bin Abdulaziz Hospital", "Green Crescent Hospital", "Shaqra General Hospital", "King Khaled Eye Specialist Hospital", "Al-Iman General Hospital", "Saudi British Hospital", "Prince Salman Center for Kidney Diseases", "Al Jazeera Hospital", "Dallah Hospital", "Dermatology and plastic surgery hospital", "Kingdom Hospital", "National Hospital", "Mowasat Hospital", "Military Forces Hospital", "King Abdulaziz University Hospital", "German Saudi Hospital", "King Saud Medical City"]
-
+    
     var body: some View {
         NavigationView(){
             
@@ -41,14 +42,9 @@ struct Catgpage: View {
                 
                 VStack{
                     HStack{
-                        ////                        NavigationLink(destination: BlankPage()){
-                        ////                            Image(systemName: "folder.circle.fill")
-                        ////                                .resizable()
-                        ////                                .foregroundColor(Color(red: 0.072, green: 0.589, blue: 0.887))
-                        ////                                .frame(width: 50, height: 58)
-                        ////                        }
-                        Text("\(folderName)'s folder")
-                            .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.0, green: 0.0, blue: 0.0)/*@END_MENU_TOKEN@*/)
+                   
+                        Text("\(ThefolderName)'s folder")
+                            .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
                             .lineLimit(0)
                             .font(.largeTitle)
                             .fontWeight(.bold)
@@ -86,19 +82,19 @@ struct Catgpage: View {
                         Button {
                             print("tapped")
                         } label: {
-                            NavigationLink(destination: ContentView()) {
+                            NavigationLink(destination: ContentView(CatgName : "Medicine")) {
                                 ZStack {
                                     Image(systemName: "rectangle.portrait.fill")
-                                        .resizable(capInsets: EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0))
+                                        .resizable()
                                         .frame(width: 164.0, height: 176.0)
                                         .foregroundColor(Color(red: 0.888, green: 0.943, blue: 0.976))
                                         .overlay(RoundedRectangle(cornerRadius: 20)
                                             .stroke(Color.cyan, lineWidth: 1))
-                                     .border(.cyan)
+                
                                     
                                     VStack{
                                         Image(systemName: "pills")
-                                            .resizable(capInsets: EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0))
+                                            .resizable()
                                             .fontWeight(.medium)
                                             .frame(width: 64, height: 58)
                                             .foregroundColor(Color(red: 0.072, green: 0.589, blue: 0.887))
@@ -112,12 +108,12 @@ struct Catgpage: View {
                             }
                         }
                         Button{
-                            print("tapped")
+
                         } label: {
-                            NavigationLink(destination: ContentView(), label: {
+                            NavigationLink(destination: ContentView(CatgName : "Reports"), label: {
                                 ZStack{
                                     Image(systemName: "rectangle.portrait.fill")
-                                        .resizable(capInsets: EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0))
+                                        .resizable()
                                         .frame(width: 164.0, height: 176.0)
                                         .foregroundColor(Color(red: 0.888, green: 0.943, blue: 0.976))
                                         .overlay(RoundedRectangle(cornerRadius: 20)
@@ -137,12 +133,11 @@ struct Catgpage: View {
                     
                     HStack(spacing: 20){
                         Button {
-                            print("tapped")
                         } label: {
-                            NavigationLink(destination: ContentView(), label: {
+                            NavigationLink(destination: ContentView(CatgName : "Lab Results"), label: {
                                 ZStack{
                                     Image(systemName: "rectangle.portrait.fill")
-                                        .resizable(capInsets: EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0), resizingMode: .stretch)
+                                        .resizable()
                                         .frame(width: 164.0, height: 176.0)
                                         .foregroundColor(Color(red: 0.888, green: 0.943, blue: 0.976))
                                         .overlay(RoundedRectangle(cornerRadius: 20)
@@ -162,9 +157,9 @@ struct Catgpage: View {
                                 }})
                         }
                         Button {
-                            print("tapped")
                         } label: {
-                            NavigationLink(destination: ContentView(), label: {
+                          
+                            NavigationLink(destination: ContentView(CatgName : "X-ray"), label: {
                                 ZStack{
                                     Image(systemName: "rectangle.portrait.fill")
                                         .resizable(capInsets: EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0))
@@ -186,29 +181,30 @@ struct Catgpage: View {
                 }.padding(.bottom, 60)
             }
             
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing){
-                    Button {
-                        print("Done Tapd")
-                    } label: { NavigationLink(destination: ContentView(), label: {
-                        Image(systemName: "person.crop.circle")
-                            .resizable()
-                            .foregroundColor(Color(red: 0.072, green: 0.589, blue: 0.887))
-                            .frame(width: 41, height: 44)
-                    }) //Why we wrote ")" here?
-                    }
-                }
-            }
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing){
+//                    Button {
+//                        print("Done Tapd")
+//                    } label: { NavigationLink(destination: ContentView(), label: {
+//                        Image(systemName: "person.crop.circle")
+//                            .resizable()
+//                            .foregroundColor(Color(red: 0.072, green: 0.589, blue: 0.887))
+//                            .frame(width: 41, height: 44)
+//                    }) //Why we wrote ")" here?
+//                    }
+//                }
+//            }
             .toolbar{
                 ToolbarItem(placement: .navigationBarLeading){
                     Button {
-                        print("Done")
+                     
                     } label: {
-                        NavigationLink(destination: ContentView(), label: {
-                            Image(systemName: "chevron.backward.circle")
-                                .resizable()
+                        NavigationLink(destination: FoldersView(ThefolderName: Binding<String>.constant("Casper")), label: {
+                            Image(systemName: "folder.circle.fill")
                                 .foregroundColor(Color(red: 0.072, green: 0.589, blue: 0.887))
-                                .frame(width: 41, height: 44)
+                              
+                            Text("change folder")
+                                .foregroundColor(Color.black)
                         })
                     }
                 }
@@ -221,7 +217,7 @@ struct Catgpage: View {
     
     struct Catgpage_Previews: PreviewProvider {
         static var previews: some View {
-            Catgpage()
+            Catgpage(CatgName: Binding<String>.constant("Medicine"))
         }
     }
 }

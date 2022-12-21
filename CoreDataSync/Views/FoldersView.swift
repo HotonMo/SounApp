@@ -6,7 +6,8 @@ struct FoldersView: View {
     @Environment(\.managedObjectContext) private var viewContext
     //  @Environment(\.presentationMode) var presentationMode
     @State private var FoldernameInput: String = ""
-    
+
+    @Binding var ThefolderName :String
     
     
     var items: [GridItem] {
@@ -21,6 +22,7 @@ struct FoldersView: View {
     private var Folders : FetchedResults<FolderEntity>
     
     @State private var isShowingAddFolderView = false
+
     
     var body: some View {
         
@@ -28,7 +30,7 @@ struct FoldersView: View {
         
         NavigationView {
             ZStack{
-                Image("Background")
+                Image("Background1")
                     .renderingMode(.original)
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
@@ -62,10 +64,12 @@ struct FoldersView: View {
                                             .foregroundColor(Color.red)
                                     } //    .offset(x: 70, y: -75)
                                 }
-                                FolderView(name: folder.folderName ?? "None")
-                               
+                                    FolderView(name: folder.folderName ?? "None")
+                                
+                           
                                 
                             }
+                            
                             
                         }
                     }
@@ -118,19 +122,30 @@ struct FoldersView: View {
     
     
     struct FolderView : View{
+        @State var isPresented = false
         let name : String
         var body: some View{
+            Button{ isPresented.toggle()}label: {
             VStack{
+               
                 ZStack{
                     Image("BlueFile")
+                    
+                        .frame(width: 150.0, height: 150.0)
+                        .background(Color("lightBlue3"))
+                        .cornerRadius(17)
                 }
-                .frame(width: 150.0, height: 150.0)
-                .background(Color("lightBlue3"))
-                .cornerRadius(17)
-                Text(name)
-                    .font(.system(size: 18))
+                        Text(name)
+                            .font(.system(size: 18))
+                        
+                   
+                }.fullScreenCover(isPresented: $isPresented, content: {
+                    Catgpage(ThefolderName: name, CatgName: Binding<String>.constant("File") )
+                    
+                })
             }
         }
+        
     }
     
     
@@ -173,7 +188,7 @@ struct FoldersView: View {
     }
     struct FoldersView_Previews: PreviewProvider {
         static var previews: some View {
-            FoldersView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            FoldersView(ThefolderName: Binding<String>.constant("Casper")).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
         
         

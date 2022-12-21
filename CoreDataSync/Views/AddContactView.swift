@@ -26,13 +26,13 @@ struct AddContactView: View {
                     contactImage.onTapGesture {
                         self.isShowingImagePicker = true
                     }
-                    TextField("Full Name", text: $nameInput)
+                    TextField("Photo Name", text: $nameInput)
                         .textContentType(.name)
                 }
                 Spacer()
             }
             .padding()
-            .navigationTitle("Add Contact")
+            .navigationTitle("Add Photo")
             .sheet(isPresented: $isShowingImagePicker, onDismiss: {
                 isShowingImagePicker = false
             }, content: {

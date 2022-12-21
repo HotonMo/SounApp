@@ -23,6 +23,7 @@ struct ContentView: View {
     private var contacts: FetchedResults<Contact>
     
     @State private var isShowingAddView = false
+    @State  var CatgName = "Files"
     
     var body: some View {
         
@@ -89,7 +90,7 @@ struct ContentView: View {
                    
                 }
             }
-            .navigationTitle("My files")
+            .navigationBarTitle("My \(CatgName)")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(isEditing ? "Done" : "Edit") {
@@ -166,10 +167,10 @@ struct AddFileView : View{
         
         
     }}
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
-
-
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView(CatgName: Binding<String>.constant("images")).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//    }
+//}
+//
+//
