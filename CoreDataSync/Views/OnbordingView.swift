@@ -108,8 +108,7 @@ struct OnbordingView: View {
                 .buttonStyle(PlainButtonStyle())
             }
             .toolbar {
-          NavigationLink(destination:   FolderPageView(
-            currentUser: userList[0]), label:
+          NavigationLink(destination:   FoldersView(), label:
                             {
               Text("skip")
                   .foregroundColor(.blue)

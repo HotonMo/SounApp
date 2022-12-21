@@ -10,8 +10,6 @@
 		5D9460072953183C001ED285 /* OnbordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9460062953183C001ED285 /* OnbordingView.swift */; };
 		5D94600929531863001ED285 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D94600829531863001ED285 /* SplashScreenView.swift */; };
 		5D94600B29531998001ED285 /* Catgpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D94600A29531998001ED285 /* Catgpage.swift */; };
-		5D94600F29532036001ED285 /* FolderPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D94600E29532036001ED285 /* FolderPageView.swift */; };
-		5D9460112953208A001ED285 /* lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9460102953208A001ED285 /* lists.swift */; };
 		5D9460172953274E001ED285 /* CoreDataSync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D9460152953274E001ED285 /* CoreDataSync.xcdatamodeld */; };
 		5D9460192953337C001ED285 /* FoldersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9460182953337C001ED285 /* FoldersView.swift */; };
 		F4AE96E625F2D2EE00019801 /* CoreDataSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE96E525F2D2EE00019801 /* CoreDataSyncApp.swift */; };
@@ -39,8 +37,6 @@
 		5D9460062953183C001ED285 /* OnbordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingView.swift; sourceTree = "<group>"; };
 		5D94600829531863001ED285 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		5D94600A29531998001ED285 /* Catgpage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catgpage.swift; sourceTree = "<group>"; };
-		5D94600E29532036001ED285 /* FolderPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderPageView.swift; sourceTree = "<group>"; };
-		5D9460102953208A001ED285 /* lists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lists.swift; sourceTree = "<group>"; };
 		5D9460162953274E001ED285 /* CoreDataSync.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataSync.xcdatamodel; sourceTree = "<group>"; };
 		5D9460182953337C001ED285 /* FoldersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersView.swift; sourceTree = "<group>"; };
 		F4AE96E225F2D2EE00019801 /* CoreDataSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,8 +129,6 @@
 				F4AE971E25F684B000019801 /* ImagePicker.swift */,
 				5D9460062953183C001ED285 /* OnbordingView.swift */,
 				5D94600829531863001ED285 /* SplashScreenView.swift */,
-				5D94600E29532036001ED285 /* FolderPageView.swift */,
-				5D9460102953208A001ED285 /* lists.swift */,
 				5D9460182953337C001ED285 /* FoldersView.swift */,
 			);
 			path = Views;
@@ -265,9 +259,7 @@
 				5D94600929531863001ED285 /* SplashScreenView.swift in Sources */,
 				F4AE971F25F684B000019801 /* ImagePicker.swift in Sources */,
 				F4C904F926138E7E00252717 /* Config.swift in Sources */,
-				5D9460112953208A001ED285 /* lists.swift in Sources */,
 				F4AE96E825F2D2EE00019801 /* ContentView.swift in Sources */,
-				5D94600F29532036001ED285 /* FolderPageView.swift in Sources */,
 				5D9460072953183C001ED285 /* OnbordingView.swift in Sources */,
 				F4AE972125F69E7F00019801 /* AddContactView.swift in Sources */,
 				F4AE96E625F2D2EE00019801 /* CoreDataSyncApp.swift in Sources */,

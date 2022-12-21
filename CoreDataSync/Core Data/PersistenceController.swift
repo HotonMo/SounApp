@@ -13,9 +13,14 @@ struct PersistenceController {
         let result = PersistenceController()
         let viewContext = result.container.viewContext
         for i in 0 ..< 10 {
+            
             let newContact = Contact(context: viewContext)
             newContact.name = "Contact #\(i)"
             newContact.photo = UIImage(systemName: "multiply.circle.fill")
+            // come back heerrreeeeeee
+            let newFolder = FolderEntity(context : viewContext)
+             newFolder.folderName = "Folder #\(i)"
+//
         }
         do {
             try viewContext.save()

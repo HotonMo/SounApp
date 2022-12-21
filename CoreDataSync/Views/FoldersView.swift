@@ -1,100 +1,188 @@
-//import SwiftUI
-//import CoreData
-//
-//struct FoldersView: View {
-//    @State private var isEditing = false
-//    @Environment(\.managedObjectContext) private var viewContext
-//    
-//    var items: [GridItem] {
-//        Array(repeating: .init(.adaptive(minimum: 120)), count: 2)
-//    }
-//    
-//    
-//    
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \Contact.time, ascending: true)],
-//        animation: .default)
-//    private var contacts: FetchedResults<Contact>
-//    
-//    @State private var isShowingAddView = false
-//    
-//    var body: some View {
-//        
-//
-//
-//NavigationView {
-//    ZStack{
-//        Image("background")
-//            .renderingMode(.original)
-//            .resizable()
-//            .edgesIgnoringSafeArea(.all)
-//            .ignoresSafeArea()
-//        
-//        ScrollView(.vertical) {
-//            LazyVGrid(columns: items, spacing: 10){
-//                
-//                AddFileView(isShowingAddView: $isShowingAddView)
-//
-//                ForEach(contacts) { contact in
-//                    VStack {
-//                        if let image = contact.photo {
-//                            Image(uiImage: image)
-//                                .resizable()
-//                                .scaledToFill()
-//                                .frame(width: 150, height: 170, alignment: .center)
-//                                .clipped()
-//                                .padding(.horizontal)
-//                                .padding(.top)
-//                            
-//                        } else {
-//                            Image(systemName: "person.circle")
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 64, height: 64, alignment: .center)
-//                                .foregroundColor(.gray)
-//                            
-//                        }
-//                        if isEditing {
-//                            
-//                            Button {
-//                                withAnimation {
-//                                    let index = contacts.firstIndex(of: contact)!
-//                                    contacts.map{_ in contacts[index]}.forEach(viewContext.delete)
-//                                    
-//                                    do {
-//                                        try viewContext.save()
-//                                    } catch {
-//                                        let nsError = error as NSError
-//                                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//                                    }
-//                                }
-//                            } label: {
-//                                Image(systemName: "x.circle.fill")
-//                                    .resizable()
-//                                    .frame(width: 30.0, height: 30.0)
-//                                    .foregroundColor(Color.red)
-//                            } //    .offset(x: 70, y: -75)
-//                        }
-//                        Text(contact.name ?? "None")
-//                        Text(contact.time?.formatted(date: .complete, time: .omitted) ?? "No time")
-//                    }
-//                    
-//                }
-//            }
-//           
-//        }
-//    }
-//    .navigationTitle("My files")
-//    .toolbar {
-//        ToolbarItem(placement: .navigationBarTrailing) {
-//            Button(isEditing ? "Done" : "Edit") {
-//                withAnimation { isEditing.toggle() }
-//            }
-//        }
-//    }
-//}.sheet(isPresented: $isShowingAddView, content: {
-//    AddContactView(onAdd: { name, image in
-//        isShowingAddView = false
-//        addContact(name: name, photo: image)
-//    }, onCancel: { isShowingAddView = false })
-//})
+import SwiftUI
+import CoreData
+
+struct FoldersView: View {
+    @State private var isEditing = false
+    @Environment(\.managedObjectContext) private var viewContext
+    //  @Environment(\.presentationMode) var presentationMode
+    @State private var FoldernameInput: String = ""
+    
+    
+    
+    var items: [GridItem] {
+        Array(repeating: .init(.adaptive(minimum: 120)), count: 2)
+    }
+    
+    
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \FolderEntity.folderName, ascending: true)],
+        animation: .default)
+    private var Folders : FetchedResults<FolderEntity>
+    
+    @State private var isShowingAddFolderView = false
+    
+    var body: some View {
+        
+        
+        
+        NavigationView {
+            ZStack{
+                Image("Background")
+                    .renderingMode(.original)
+                    .resizable()
+                    .edgesIgnoringSafeArea(.all)
+                    .ignoresSafeArea()
+                
+                ScrollView(.vertical) {
+                    LazyVGrid(columns: items, spacing: 10){
+                        
+                        AddFolderView(isShowingAddFolderView: $isShowingAddFolderView)
+                        ForEach(Folders) { folder in
+                            VStack {
+                                
+                                if isEditing {
+                                    
+                                    Button {
+                                        withAnimation {
+                                            let index = Folders.firstIndex(of: folder)!
+                                            Folders.map{_ in Folders[index]}.forEach(viewContext.delete)
+                                            
+                                            do {
+                                                try viewContext.save()
+                                            } catch {
+                                                let nsError = error as NSError
+                                                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                                            }
+                                        }
+                                    } label: {
+                                        Image(systemName: "x.circle.fill")
+                                            .resizable()
+                                            .frame(width: 30.0, height: 30.0)
+                                            .foregroundColor(Color.red)
+                                    } //    .offset(x: 70, y: -75)
+                                }
+                                FolderView(name: folder.folderName ?? "None")
+                               
+                                
+                            }
+                            
+                        }
+                    }
+                    
+                }
+            }
+            .navigationTitle("Folders")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(isEditing ? "Done" : "Edit") {
+                        withAnimation { isEditing.toggle() }
+                    }
+                }
+                
+                
+                
+            }
+            
+            
+        }  .alert("Add New Folder", isPresented: $isShowingAddFolderView, actions: {
+            TextField("Folder Name", text: $FoldernameInput)
+            
+            Button("Add", action: {
+                addFContact(name: FoldernameInput)
+            })
+            Button("Cancel", role: .cancel, action: {})
+        }, message: {
+            Text("Please enter the folder name ")
+            
+        })
+        
+        
+    }
+    
+    
+
+    
+    private func addFContact(name: String) {
+        let newFolder = FolderEntity(context: viewContext)
+        newFolder.folderName = name
+        
+        
+        do {
+            try viewContext.save()
+        } catch {
+            fatalError("Error: \(error)")
+        }
+    }
+    
+    
+    
+    struct FolderView : View{
+        let name : String
+        var body: some View{
+            VStack{
+                ZStack{
+                    Image("BlueFile")
+                }
+                .frame(width: 150.0, height: 150.0)
+                .background(Color("lightBlue3"))
+                .cornerRadius(17)
+                Text(name)
+                    .font(.system(size: 18))
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    struct AddFolderView : View{
+        @Binding var isShowingAddFolderView : Bool
+        var body : some View{
+            
+            Button(action: { isShowingAddFolderView = true }){
+                VStack{
+                    ZStack{
+                        Image("GrayFile")
+                            .padding(.leading, 5)
+                    }
+                    .frame(width: 150.0, height: 150.0)
+                    .background(Color("lightBlue3").opacity(0.4))
+                    .cornerRadius(17)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 17)
+                            .stroke(.gray, style: StrokeStyle(lineWidth: 1, dash: [13, 5]))
+                    )
+                    Text("Add")
+                        .font(.system(size: 18))
+                        .foregroundColor(Color.blue)
+                }
+                
+                
+                
+            }
+            
+            
+            
+            
+        }
+        
+    }
+    struct FoldersView_Previews: PreviewProvider {
+        static var previews: some View {
+            FoldersView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+}
+

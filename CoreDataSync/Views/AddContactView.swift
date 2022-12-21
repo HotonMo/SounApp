@@ -13,6 +13,7 @@ struct AddContactView: View {
     @State private var isShowingImagePicker: Bool = false
     @State private var nameInput: String = ""
 
+
     /// Callback after user selects to add contact with given name and image.
     let onAdd: ((String, UIImage?) -> Void)?
     /// Callback after user cancels.
@@ -65,3 +66,6 @@ struct AddContactView: View {
         }
     }
 }
+
+
+

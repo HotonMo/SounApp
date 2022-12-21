@@ -111,9 +111,7 @@ struct ContentView: View {
     
     
     
-    
-    
-    
+
     
     private func addContact(name: String, photo: UIImage?) {
         let newContact = Contact(context: viewContext)
