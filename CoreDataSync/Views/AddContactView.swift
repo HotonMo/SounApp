@@ -44,7 +44,7 @@ struct AddContactView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add", action: { onAdd?(nameInput, image) })
-                        .disabled(nameInput.isEmpty)
+                    //    .disabled(nameInput.isEmpty)
                 }
             }
         }

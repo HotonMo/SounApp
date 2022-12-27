@@ -18,9 +18,9 @@ struct ContentView: View {
     
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Contact.time, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \ContentEntity.time, ascending: true)],
         animation: .default)
-    private var contacts: FetchedResults<Contact>
+    private var contacts: FetchedResults<ContentEntity>
     
     @State private var isShowingAddView = false
     @State  var CatgName = "Files"
@@ -82,7 +82,8 @@ struct ContentView: View {
                                     } //    .offset(x: 70, y: -75)
                                 }
                                 Text(contact.name ?? "None")
-                                Text(contact.time?.formatted(date: .complete, time: .omitted) ?? "No time")
+                              //  Text(contact.time?.formatted(date: .complete, time: .omitted) ?? "No time")
+                                Text(contact.time!, formatter: itemFormatter)
                             }
                             
                         }
@@ -111,11 +112,16 @@ struct ContentView: View {
     
     
     
-    
+    private let itemFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .medium
+        return formatter
+    }()
 
     
     private func addContact(name: String, photo: UIImage?) {
-        let newContact = Contact(context: viewContext)
+        let newContact = ContentEntity(context: viewContext)
         newContact.name = name
         newContact.photo = photo
         
@@ -173,4 +179,4 @@ struct AddFileView : View{
 //    }
 //}
 //
-//
+
